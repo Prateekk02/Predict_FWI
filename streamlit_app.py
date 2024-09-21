@@ -2,7 +2,7 @@ import pickle
 import streamlit as st
 import numpy as np
 import pandas as pd
-from sklearn.preprocessing import StandardScaler
+
 
 # Load ridge regressor and standard scaler pickle files
 ridge_model = pickle.load(open('models/ridge.pkl', 'rb'))
