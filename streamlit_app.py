@@ -2,12 +2,23 @@ import pickle
 import streamlit as st
 import numpy as np
 import pandas as pd
+import os
 
+# Set the directory where your model files are located
+model_dir = os.path.join(os.getcwd(), 'models')
 
-# Load ridge regressor and standard scaler pickle files
-ridge_model = pickle.load(open('models/ridge.pkl', 'rb'))
-standard_scaler = pickle.load(open('models/scaler.pkl', 'rb'))
+# Load ridge regressor and standard scaler pickle files using os module
+ridge_model_path = os.path.join(model_dir, 'ridge.pkl')
+scaler_model_path = os.path.join(model_dir, 'scaler.pkl')
 
+# Make sure the files exist before loading
+if os.path.exists(ridge_model_path) and os.path.exists(scaler_model_path):
+    ridge_model = pickle.load(open(ridge_model_path, 'rb'))
+    standard_scaler = pickle.load(open(scaler_model_path, 'rb'))
+else:
+    st.error("Model files not found. Please check the paths and ensure models exist.")
+    
+    
 # Title and instructions
 st.title('Fire Weather Index Prediction')
 st.write('Enter the required values to predict the fire weather index.')
