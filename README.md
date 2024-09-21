@@ -15,13 +15,10 @@ This will definitely save various flora and fauna of that areas.
 ## Installation
 To get started with Awesome Project, follow these simple steps:
 
-1. Clone the repository: `https://github.com/Prateekk02/Predict_FWI.git`
-2. Navigate to the project directory: `cd Predict_FWI`
-3. Install required packages present in requirement.txt file using 'pip install requirement.txt'.
+- Clone this repository. 
+- Run pip install -r requirements.txt
+- Run python application.py
 
-## Usage
-Once the installation is complete, run the project using the following command:
 
-'python application.py'
 
 
